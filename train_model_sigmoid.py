@@ -5,7 +5,8 @@ from collections import Counter
 WIDTH = 80
 HEIGHT = 60
 LR = 1e-5
-EPOCHS = 6 
+EPOCHS = 6
+DIR = 'models/'
 MODEL_NAME = 'geometry-dash-{}-{}-{}-epochs_sigmoid.model'.format(LR, 'alexnetv2', EPOCHS)
 
 
@@ -35,7 +36,7 @@ model.fit({'input':X}, {'targets':Y}, n_epoch = EPOCHS,
 # tenserboard --logdir=<log file>
 
 
-model.save(MODEL_NAME)
+model.save(DIR + MODEL_NAME)
 
 
 train_data = np.load("./data2.npy")[:10]
